@@ -6,6 +6,7 @@ import javax.swing.*;
 
 public class Menu {
 
+    private int accountNum;
     //inits menu
     public Menu() {
         String user = JOptionPane.showInputDialog(null, "Do you want to access your bank account?");
@@ -15,6 +16,7 @@ public class Menu {
     //asks for bank account number
     public void bankAccount(String user){
         int accountNum = 1234;
+        this.accountNum = accountNum;
         if(user.equalsIgnoreCase("yes")) {
             String bankAccount = JOptionPane.showInputDialog(null, "What is your bank account number?");
             if(accountNum == Integer.parseInt(bankAccount)) {
@@ -42,9 +44,11 @@ public class Menu {
 
         else if(bankActions == "1") {
 
-            String depositAmmount = JOptionPane.showInputDialog(null, "How much would you like to deposit");
-            int depositInt = Integer.parseInt(depositAmmount);
-            BankActions.Deposit(depositAmmount);
+            String depositAmount = JOptionPane.showInputDialog(null, "How much would you like to deposit");
+            int depositInt = Integer.parseInt(depositAmount);
+
+            BankActions deposit = new BankActions();
+            deposit.Deposit(accountNum, depositInt);
 
         }
 

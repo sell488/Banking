@@ -8,10 +8,9 @@ public class BankActions {
 
     }
 
-    public void Deposit() {
-        String depositAmount = JOptionPane.showInputDialog(null, "How much would you like to deposit");
-        int depositInt = Integer.parseInt(depositAmount);
-
+    public void Deposit(int account, int amount) {
+        Account balance = new Account();
+        balance.SetAccounts(account, amount);
 
     }
 }
