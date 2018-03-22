@@ -7,13 +7,13 @@ import java.util.List;
 
 public class Account {
 
-    HashMap acounts = new HashMap();
-    public Object GetAccount(int acount) {
-        return acounts.get(acount);
+    HashMap<Integer, Integer> accounts = new HashMap<Integer, Integer>();
+    public Integer getAccount(Integer account) {
+        return accounts.get(account);
     }
 
-    public void SetAccounts(int acount, int amount) {
-        acounts.put(acount, amount);
+    public void setAccounts(int account, int amount) {
+        accounts.put(account, amount);
     }
 
 }

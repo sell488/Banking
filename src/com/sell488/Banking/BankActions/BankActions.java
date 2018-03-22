@@ -10,7 +10,8 @@ public class BankActions {
 
     public void Deposit(int account, int amount) {
         Account balance = new Account();
-        balance.SetAccounts(account, amount);
-
+        int currentBalance = balance.getAccount(account);
+        int transaction = currentBalance + amount;
+        balance.setAccounts(account, transaction);
     }
 }
