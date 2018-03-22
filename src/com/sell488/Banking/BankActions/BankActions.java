@@ -10,6 +10,7 @@ public class BankActions {
 
     public void deposit(int account, int amount) {
         Account balance = new Account();
+        balance.Account();
         int currentBalance = balance.getAccount(account);
         System.out.println("got balance");
         int transaction = currentBalance + amount;

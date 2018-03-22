@@ -7,7 +7,12 @@ import java.util.List;
 
 public class Account {
 
+    public void Account(){
+        accounts.put(1234, 0);
+    }
+
     HashMap<Integer, Integer> accounts = new HashMap<Integer, Integer>();
+
     public Integer getAccount(Integer account) {
         return accounts.get(account);
     }
