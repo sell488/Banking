@@ -17,6 +17,10 @@ public class Account {
         return accounts.get(account);
     }
 
+    public HashMap getAccountList(){
+        return accounts;
+    }
+
     public void setAccounts(int account, int amount) {
         accounts.put(account, amount);
     }
