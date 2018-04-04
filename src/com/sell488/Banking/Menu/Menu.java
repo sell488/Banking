@@ -70,12 +70,13 @@ public class Menu {
     }
 
 
-
+    //generic error handler
     public void handleError(){
         System.out.println("Error");
         Menu menu = new Menu();
     }
 
+    //creates a new Menu object
     public void exit() {
         Menu menu = new Menu();
     }

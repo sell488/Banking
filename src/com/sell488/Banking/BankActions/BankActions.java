@@ -8,6 +8,7 @@ public class BankActions {
 
     }
 
+    //deposits money
     public void deposit(int account, int amount) {
         Account balance = new Account();
         balance.Account();
@@ -18,6 +19,7 @@ public class BankActions {
         System.out.println("Deposit");
     }
 
+    //withdraws money
     public void withdraw(int account, int amount) {
         Account balance = new Account();
         int currentBalance = balance.getAccount(account);
