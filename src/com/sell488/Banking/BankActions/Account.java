@@ -25,6 +25,10 @@ public class Account {
         return accounts;
     }
 
+    public HashMap<Integer, Integer> getAccounts() {
+        return accounts;
+    }
+
     //Sets the balance of an account
     public void setAccounts(int account, int amount) {
         accounts.put(account, amount);
