@@ -1,32 +1,60 @@
 package com.sell488.Banking.Menu;
 
+import com.sell488.Banking.BankActions.AccountManager;
 import com.sell488.Banking.BankActions.BankActions;
+import jdk.nashorn.internal.scripts.JO;
 
 import javax.swing.*;
+import java.util.HashMap;
 
 public class Menu {
 
     private int accountNum;
+    private String userName1 = "sell488";
+    private String password1 = "1234";
     //inits menu
     public Menu() {
-        String user = JOptionPane.showInputDialog(null, "Do you want to access your bank account?");
-        bankAccount(user);
+        String user = JOptionPane.showInputDialog(null, "Do you want to 1. access your bank account or 2. manage accounts?");
+        if(user == "1") {
+            bankAccount(user);
+        }
+
+        else if(user == "2") {
+            login();
+        }
     }
 
     //asks for bank account number
     public void bankAccount(String user){
         int accountNum = 1234;
         this.accountNum = accountNum;
-        if(user.equalsIgnoreCase("yes")) {
+
             String bankAccount = JOptionPane.showInputDialog(null, "What is your bank account number?");
             if(accountNum == Integer.parseInt(bankAccount)) {
                 access();
             }
 
             else handleError();
-        }
+    }
 
-        else handleError();
+    public void login() {
+        AccountManager access = new AccountManager();
+
+        String userName = JOptionPane.showInputDialog(null, "Enter your user name");
+        if(userName == userName1) {
+            String password = JOptionPane.showInputDialog("Enter password");
+            if(password == password1) {
+                manageAccounts();
+            }
+        }
+    }
+
+    public void manageAccounts() {
+        String editAccounts = JOptionPane.showInputDialog(null, "Do you want to 1. Add a new account 2. Edit an existing account?");
+        if(editAccounts == "1") {
+            String addAccount = JOptionPane.showInputDialog(null, "What account number do you want to create");
+//            HashMap<Integer, Integer> menuAccount = access().getList;
+        }
     }
 
     //asks for action type

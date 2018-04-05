@@ -15,4 +15,13 @@ public class AccountManager extends Account{
         }
     }
 
+    public void manageAccounts() {
+
+    }
+
+    public HashMap<Integer, Integer> getList() {
+        HashMap <Integer, Integer> editMap = getAccounts();
+        return editMap;
+    }
+
 }
