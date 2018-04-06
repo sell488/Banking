@@ -2,7 +2,6 @@ package com.sell488.Banking.Menu;
 
 import com.sell488.Banking.BankActions.AccountManager;
 import com.sell488.Banking.BankActions.BankActions;
-import jdk.nashorn.internal.scripts.JO;
 
 import javax.swing.*;
 import java.util.HashMap;
@@ -12,6 +11,7 @@ public class Menu {
     private int accountNum;
     private String userName1 = "sell488";
     private String password1 = "1234";
+    private AccountManager access = new AccountManager();
     //inits menu
     public Menu() {
         String user = JOptionPane.showInputDialog(null, "Do you want to 1. access your bank account or 2. manage accounts?");
@@ -37,9 +37,8 @@ public class Menu {
             else handleError();
     }
 
+    //logs in to admin
     public void login() {
-        AccountManager access = new AccountManager();
-
         String userName = JOptionPane.showInputDialog(null, "Enter your user name");
         if(userName == userName1) {
             String password = JOptionPane.showInputDialog("Enter password");
@@ -49,11 +48,19 @@ public class Menu {
         }
     }
 
+    //admin actions
     public void manageAccounts() {
         String editAccounts = JOptionPane.showInputDialog(null, "Do you want to 1. Add a new account 2. Edit an existing account?");
+
+        //adds a new account
         if(editAccounts == "1") {
             String addAccount = JOptionPane.showInputDialog(null, "What account number do you want to create");
-//            HashMap<Integer, Integer> menuAccount = access().getList;
+            int accountNum = Integer.parseInt(addAccount);
+
+            String initBalance = JOptionPane.showInputDialog(null, "What is the initial balance");
+            int startingBalance = Integer.parseInt(initBalance);
+
+            access.addNewAccount(accountNum, startingBalance);
         }
     }
 
@@ -67,6 +74,7 @@ public class Menu {
     //handles options
     public void handleOptions(int bankActions) {
 
+        //deposit
         if(bankActions == 1) {
             BankActions deposit = new BankActions();
 
@@ -77,6 +85,7 @@ public class Menu {
 
         }
 
+        //withdraw
         else if(bankActions == 2) {
             BankActions withdraw = new BankActions();
 
@@ -87,10 +96,12 @@ public class Menu {
 
         }
 
+        //restarts the program
         else if(bankActions == 3){
             exit();
         }
 
+        //error handler
         else {
             handleError();
         }

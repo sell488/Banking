@@ -25,6 +25,7 @@ public class Account {
         return accounts;
     }
 
+    //gets accounts
     public HashMap<Integer, Integer> getAccounts() {
         return accounts;
     }
