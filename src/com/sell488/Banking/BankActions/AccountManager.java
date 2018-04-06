@@ -8,7 +8,7 @@ import java.util.HashMap;
 public class AccountManager extends Account{
     Account accountLists = new AccountManager();
 
-    public void addNewAccount(int accountNum, int initialBalance) {
+    private void addNewAccount(int accountNum, int initialBalance) {
         accounts = accountLists.getAccounts();
         if(!(accounts.containsKey(accountNum))) {
             String newAccount = JOptionPane.showInputDialog(null, "Account name");
