@@ -6,25 +6,27 @@ import javax.swing.*;
 import java.util.HashMap;
 
 public class AccountManager extends Account{
-    AccountManager accountLists = new AccountManager();
 
-    //adds a new account
-    public void addNewAccount(int accountNum, int initialBalance) {
-        accounts = accountLists.getAccounts();
-        if(!(accounts.containsKey(accountNum))) {
-            accounts.put(accountNum, initialBalance);
-        }
-    }
+    //Admin can change Account information so i'll override them to have that work
 
-    //manages accounts
-    public void manageAccounts() {
+
+    public AccountManager(String n){
+        super(n);
 
     }
 
-    //Gets the list from Account Class
-    public HashMap<Integer, Integer> getList() {
-        HashMap <Integer, Integer> editMap = getAccounts();
-        return editMap;
+     //overloading the method
+     public void addBalance(Account account, double amount) {
+         account.addBalance(amount);
     }
 
+    //withdraw money from an account
+    public void withdraw(Account account, double amount) {
+        super.withdraw(amount);
+    }
+
+    //this method changes the name of an account
+    public void changeName(Account account, String name) {
+       account.setName(name);
+    }
 }

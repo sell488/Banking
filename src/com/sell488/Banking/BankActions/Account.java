@@ -1,38 +1,39 @@
 package com.sell488.Banking.BankActions;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 public class Account {
 
-    //default account
-    public void Account(){
-        accounts.put(1234, 0);
+    private  String name;
+    private  int id;
+    private  double balance;
+
+    public Account(String theisAdmin){
+        this.name = theisAdmin;
     }
 
-    //HashMap for storing accounts and balances
-    HashMap<Integer, Integer> accounts = new HashMap<Integer, Integer>();
-
-    //Gets account balance at a specific key
-    public Integer getAccount(Integer account) {
-        return accounts.get(account);
+    public Account(String name, int id){
+        this.name = name;
+        this.id = id;
     }
 
-    //Gets the whole HashMap
-    public HashMap getAccountList(){
-        return accounts;
+    public void addBalance(double amount){
+        this.balance += amount;
     }
 
-    //gets accounts
-    public HashMap<Integer, Integer> getAccounts() {
-        return accounts;
+    public void withdraw(double amount){
+        this.balance -= amount;
     }
 
-    //Sets the balance of an account
-    public void setAccounts(int account, int amount) {
-        accounts.put(account, amount);
+    public double getBalance(){
+        return this.balance;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public String getAccountInfo(){
+        return "id: " + id + " name: " + this.name + " balance: " + balance;
     }
 
 }
