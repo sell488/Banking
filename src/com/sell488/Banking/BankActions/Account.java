@@ -1,38 +1,61 @@
 package com.sell488.Banking.BankActions;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 public class Account {
 
-    //default account
-    public void Account(){
-        accounts.put(1234, 0);
+    private  String name;
+    String password;
+    private  int id;
+    private  double balance;
+
+    public Account(){
+
     }
 
-    //HashMap for storing accounts and balances
-    HashMap<Integer, Integer> accounts = new HashMap<Integer, Integer>();
 
-    //Gets account balance at a specific key
-    public Integer getAccount(Integer account) {
-        return accounts.get(account);
+    public Account(String name, String password){
+        this.name = name;
+        this.password = password; //for now all characters are supported
+       // this.id = id; //i don't think the user should have the ability to specify his id
     }
 
-    //Gets the whole HashMap
-    public HashMap getAccountList(){
-        return accounts;
+    //user options (setters)
+    public void addBalance(double amount){
+        this.balance += amount;
     }
 
-    //gets accounts
-    public HashMap<Integer, Integer> getAccounts() {
-        return accounts;
+    public void withdraw(double amount){
+        this.balance -= amount;
     }
 
-    //Sets the balance of an account
-    public void setAccounts(int account, int amount) {
-        accounts.put(account, amount);
+    public void setName(String name){
+        this.name = name;
     }
+
+    public void deleteAccount(){
+        this.name = null;
+        this.id = 0;
+        this.balance = 0;
+
+    }
+
+    public void changePassword(String password){
+        this.password = password;
+    }
+
+
+    //getters
+    public String getName(){
+        return this.name;
+    }
+
+    public double getBalance(){
+        return this.balance;
+    }
+
+    public String getAccountInfo(){
+        return "id: " + id + " name: " + this.name + " balance: " + balance;
+    }
+
 
 }
