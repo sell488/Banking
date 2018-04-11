@@ -5,7 +5,6 @@ import com.sell488.Banking.BankActions.Account;
 
 public class AccountManager extends Account{
 
-    //Admin can change Account information so i'll override them to have that work
 
 
     public AccountManager(){
