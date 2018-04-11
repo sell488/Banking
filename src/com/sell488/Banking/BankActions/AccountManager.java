@@ -2,8 +2,6 @@ package com.sell488.Banking.BankActions;
 
 import com.sell488.Banking.BankActions.Account;
 
-import javax.swing.*;
-import java.util.HashMap;
 
 public class AccountManager extends Account{
 
