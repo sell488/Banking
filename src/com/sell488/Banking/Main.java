@@ -7,13 +7,14 @@ public class Main {
 
     public static void main(String... args) {
        //testing
-        Account rob = new Account("Robert",1);
+        Account rob = new Account("Robert","password123");
         rob.addBalance(200);
         System.out.println(rob.getBalance());
-        AccountManager admin = new AccountManager("Admin");
+        AccountManager admin = new AccountManager();
 
         admin.addBalance(rob,100);
-        System.out.println(rob.getBalance());
+        admin.getBalance();
+        System.out.println(admin.getAccountInfo(rob));
 
     }
 
