@@ -60,7 +60,7 @@ public class Menu {
             String initBalance = JOptionPane.showInputDialog(null, "What is the initial balance");
             int startingBalance = Integer.parseInt(initBalance);
 
-            access.addNewAccount(accountNum, startingBalance);
+            //access.addNewAccount(accountNum, startingBalance);
         }
     }
 
